@@ -13,7 +13,7 @@ num2 = Convert.ToInt32(Console.ReadLine());
 
 if (num1 != num2)
 {
-    if (num1>num2)
+    if (num1 > num2)
     {
         Console.Write($"Из двух введенных чисел большим является первое число {num1}");
     }
@@ -24,6 +24,6 @@ if (num1 != num2)
     }
 }
 else
-    {
-        Console.Write("Введенные числа равны");
-    }
+{
+    Console.Write("Введенные числа равны");
+}

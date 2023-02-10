@@ -8,5 +8,5 @@ int num;
 Console.Write("Введите число: ");
 num = Convert.ToInt32(Console.ReadLine());
 
-if (num%2==0) Console.Write($"Введенное число {num} является четным");
+if (num % 2 == 0) Console.Write($"Введенное число {num} является четным");
 else Console.Write($"Введенное число {num} НЕ является четным");

@@ -16,7 +16,7 @@ num3 = Convert.ToInt32(Console.ReadLine());
 
 max = num1;
 
-if (num2 > max) max=num2;
-if (num3 > max) max=num3;
+if (num2 > max) max = num2;
+if (num3 > max) max = num3;
 
 Console.Write($"Максимальное число: {max}");

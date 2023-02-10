@@ -1,2 +1,56 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задача 3
+// Вывод названия дня недели по заданному номеру
+
+int num, i;
+i = 0;
+
+do
+{
+    Console.Write("Введите номер дня недели (1-7): ");
+    num = Convert.ToInt32(Console.ReadLine());
+    if (num < 8 && num > 0)
+    {
+        i = 1;
+    }
+    else
+    {
+        Console.WriteLine("Вы ввели число вне требуемого диапазона!");
+    }
+}
+while (i == 0);
+
+
+if (num == 1)
+{
+    Console.WriteLine("День недели с введенным порядковым номером - понедельник");
+}
+
+if (num == 2)
+{
+    Console.WriteLine("День недели с введенным порядковым номером - вторник");
+}
+
+if (num == 3)
+{
+    Console.WriteLine("День недели с введенным порядковым номером - среда");
+}
+
+if (num == 4)
+{
+    Console.WriteLine("День недели с введенным порядковым номером - четверг");
+}
+
+if (num == 5)
+{
+    Console.WriteLine("День недели с введенным порядковым номером - пятница");
+}
+
+if (num == 6)
+{
+    Console.WriteLine("День недели с введенным порядковым номером - суббота");
+}
+
+if (num == 7)
+{
+    Console.WriteLine("День недели с введенным порядковым номером - воскресенье");
+}

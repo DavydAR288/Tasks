@@ -7,7 +7,7 @@ do
 {
     Console.Write("Введите трехзначное число: ");
     num = Convert.ToDouble(Console.ReadLine());
-    if (num / 100 >= 1 && num / 100 < 10)
+    if (num >= 100 && num <= 999)
     {
         i = 1;
     }

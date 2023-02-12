@@ -8,7 +8,7 @@ Console.Write("Введите число N: ");
 num = Convert.ToInt32(Console.ReadLine());
 i = 1;
 
-if (num!=1)
+if (num>1)
 {
     Console.Write($"Четные числа от 1 до {num}: ");
     while (i <= num)

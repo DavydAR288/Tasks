@@ -8,7 +8,6 @@ bool Check(int numCheck)
     return numCheck >= 100 || numCheck<=-100;
 }
 
-
 int Number(int num)
 {
     if (num>0)
@@ -29,11 +28,10 @@ int Number(int num)
     }
 }
 
-
 Console.Write("Введите трёхзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 if (Check(number))
-    Console.WriteLine($"Третья цифра числа: {Number(number)}");
+    Console.WriteLine($"Третья цифра введенного числа: {Number(number)}");
 else
     Console.WriteLine("Третьей цифры нет (число двузначное)");

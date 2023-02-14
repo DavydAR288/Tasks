@@ -14,7 +14,7 @@ else Console.WriteLine("Не кратно");
 
 bool Multiplicity(int num)
 {
-    int multCheck1 = num % 7;
-    int multCheck2 = num % 23;
-    return multCheck1 == 0 && multCheck2 == 0;
+    //int multCheck1 = num % 7;
+    //int multCheck2 = num % 23;
+    return num % 7 == 0 && num % 23 == 0;
 }

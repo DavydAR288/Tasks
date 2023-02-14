@@ -11,9 +11,9 @@ Console.WriteLine($"Новое число, полученное из перво�
 
 int NewNumber(int num)
 {
-    int firstDigit = num / 100;
-    int secondDigit = num % 10;
-    int result = firstDigit * 10 + secondDigit;
+	int firstDigit = num / 100;
+	int secondDigit = num % 10;
+	int result = firstDigit * 10 + secondDigit;
 
-    return result;
+	return result;
 }

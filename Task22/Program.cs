@@ -11,9 +11,10 @@ else Console.WriteLine("Введено не натуральное число. �
 
 void PrintSqr(int n) 
 {
+    Console.WriteLine("Число        Квадрат числа");
     for (int i = 1; i <= n; i++)
     {
-        Console.WriteLine($"{i}      {i*i}");
+        Console.WriteLine($"{i}            {i*i}");
     }
 }
 

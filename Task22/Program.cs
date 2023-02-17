@@ -4,7 +4,7 @@
 // 5 -> 1, 4, 9, 16, 25.
 // 2 -> 1,4
 
-int number = Prompt("Введите число: ");
+int number = Prompt("Введите натуральное число: ");
 
 if (number>0) PrintSqr (number);
 else Console.WriteLine("Повторите ввод, введено не натуральное число.");

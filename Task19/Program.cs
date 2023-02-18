@@ -8,7 +8,7 @@ int number = Prompt("Введите натуральное число: ");
 
 if (number > 0) //проверка числа на натуральность
 {
-    Output(Palindrome(number), number);
+    Output(Palindrome(number), number); //вызов метода проверки на палиндром и вызов невозвратного метода вывода результата проверки в консоль
 }
 else Console.WriteLine("Введено не натуральное число. Начните заново.");
 

@@ -51,7 +51,6 @@ string res = Method4(8, "Davyd.AR "); //Вызов метода
 Console.Writeline(res);
 
 //Цикл for
-
 string Method4(int count, string text)
 {
     string result = String.Empty;
@@ -65,7 +64,6 @@ string res = Method4(8, "Davyd.AR "); //Вызов метода
 Console.Writeline(res);
 
 //Цикл в цикле
-
 for (int i = 2; i <= 10; i++)
 {
     for (int j = 2; j <= 10; j++)
@@ -76,7 +74,6 @@ for (int i = 2; i <= 10; i++)
 }
 
 //Задача. Заменить символы в тексте.
-
 string text = "- Я думаю, - сказал князь, улыбаясь, - что,"
         + "ежели бы вас послали вместо нашшего любимого Винценгероде,"
         + "вы бы взяли приступом согласие прусского короля. "
@@ -102,7 +99,6 @@ string newText = Replace(text, 'к', 'К');
 Console.WriteLine(newText);
 
 //Задача. Упорядочить данные в массиве. Сортировка методом выбора - минимакса.
-
 int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
 void PrintArray(int[] array)
 {
@@ -133,7 +129,6 @@ PrintArray(arr);
 SelectionSort(arr);
 
 //Задача. Упорядочить данные в массиве. Сортировка от большего к меньшему.
-
 int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
 void PrintArray(int[] array)
 {

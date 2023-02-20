@@ -33,7 +33,7 @@ int Prompt(string message)  //метод ввода, возвращает чис
     return cc;
 }
 
-void Output (bool inputRes, int numOriginal) //невозвратный метод вывода в консоль, получает истину/ложь и число
+void Output(bool inputRes, int numOriginal) //невозвратный метод вывода в консоль, получает истину/ложь и число
 {
     if (inputRes) Console.WriteLine($"Число {numOriginal} является палиндромом");
     else Console.WriteLine($"Число {numOriginal} НЕ является палиндромом");

@@ -12,9 +12,10 @@ PrintArray(array);
 void CreateArray(int[] arr)
 {
     int count = arr.Length;
+    Random rnd = new Random(); //создает псевдослучайное число по системному времени 15мс
     for (int i = 0; i < count; i++)
     {
-        arr[i]=new Random().Next(0,2);
+        arr[i]=rnd.Next(0,2);
     }
 }
 

@@ -16,7 +16,6 @@ void CreateArray(int[] arr)
     {
         arr[i]=new Random().Next(0,2);
     }
-    Console.WriteLine();
 }
 
 void PrintArray(int[] arr)

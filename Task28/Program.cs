@@ -6,14 +6,23 @@
 
 int number = Prompt("Введите целое положительное число: ");
 
-if (number > 0) Output($"Сумма чисел от 1 до {number} ", qNum(number));
-else Console.WriteLine("Введено не целое положительное число. Начните заново.");
+Output($"Факториал числа {number} равен", qNum(number));
 
 int Prompt(string message)  //метод ввода, возвращает число
 {
-    Console.Write(message);
-    int cc = Convert.ToInt32(Console.ReadLine());
-    return cc;
+    int k=0;
+    while (k==0)
+    {
+        Console.Write(message);
+        int cc = Convert.ToInt32(Console.ReadLine());
+        if (cc>0)
+        {
+            k=1;
+            return cc;
+        }
+        else Console.WriteLine("Введено не целое положительное число. Начните заново.");
+    }
+    return 0;
 }
 
 int qNum(int n) 
@@ -29,7 +38,7 @@ int qNum(int n)
     return res;
 }
 
-void Output(string message, int result) //метод вывода в консоль
+void Output(string message, int result)
 {
     Console.WriteLine($"{message} {result}");
 }

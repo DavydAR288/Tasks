@@ -1,65 +1,49 @@
 ﻿// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-// [3 7 22 2 78] -> 76
 
-Console.Clear();
+// [3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
 
-int quantity = Prompt("Введите число элементов массива (натуральное): ", 2);
-int min = 0; //Prompt("Укажите минимальный элемент массива (любое): ", 0);
-int max = 99; //Prompt("Укажите максимальный элемент массива (любое): ", 0);
-double[] array = new double[quantity];
-array = CreateArray(array, min, max);
+// int Prompt(string message, int checkNum) // checkNum: -1 отрицательные; 0 любые; 1 положительные; 2 натуральные;
+// {
+//     int k = 0;
+//     while (k == 0)
+//     {
+//         Console.Write(message);
+//         int cc = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Массив -> ");
-Console.Write("[");
-PrintArray(array);
-Console.WriteLine("]");
+//         if (checkNum == 0) // любые
+//         {
+//             return cc;
+//         }
 
-Console.Write($"Разница между максимальным и минимальным элементами массива -> {CheckArray(array)}");
+//         if (cc >= 0 && checkNum == 1) // положительные
+//         {
+//             return cc;
+//         }
 
-int Prompt(string message, int checkNum) // checkNum: -1 отрицательные; 0 любые; 1 положительные; 2 натуральные;
+//         if (cc > 0 && checkNum == 2) // натуральные
+//         {
+//             return cc;
+//         }
+
+//         if (cc <= 0 && checkNum == -1) // отрицательные
+//         {
+//             return cc;
+//         }
+
+//         Console.WriteLine("Число не соответствует заданному диапазону. Повторите ввод.");
+//     }
+//     return 0;
+// }
+
+double[] CreateArray(int size, int min, int max)
 {
-    int k = 0;
-    while (k == 0)
-    {
-        Console.Write(message);
-        int cc = Convert.ToInt32(Console.ReadLine());
-
-        if (checkNum == 0) // любые
-        {
-            return cc;
-        }
-
-        if (cc >= 0 && checkNum == 1) // положительные
-        {
-            return cc;
-        }
-
-        if (cc > 0 && checkNum == 2) // натуральные
-        {
-            return cc;
-        }
-
-        if (cc <= 0 && checkNum == -1) // отрицательные
-        {
-            return cc;
-        }
-
-        Console.WriteLine("Число не соответствует заданному диапазону. Повторите ввод.");
-    }
-    return 0;
-}
-
-double[] CreateArray(double[] arr, int min, int max)
-{
-    int count = arr.Length;
+    double[] array = new double[size];
     Random rnd = new Random(); //создает псевдослучайное число по системному времени 15мс
-    for (int i = 0; i < count; i++)
+    for (int i = 0; i < size; i++)
     {
-        //2 Console.Write($"Введите {i+1}-й элмент массива -> "); // ручной ввод элементов массива
-        //2 arr[i] = Convert.ToDouble(Console.ReadLine());
-        arr[i]=rnd.Next(min,max+1);
+        array[i] = Math.Round(rnd.NextDouble() * (max - min) - min, 1, MidpointRounding.ToZero);
     }
-    return arr;
+    return array;
 }
 
 void PrintArray(double[] arr)
@@ -67,20 +51,44 @@ void PrintArray(double[] arr)
     int count = arr.Length;
     for (int i = 0; i < count; i++)
     {
-        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}; ");
         else Console.Write($"{arr[i]}");
     }
 }
 
-double CheckArray(double[] arr) // суммирование элементов с четными индексами (нечетными местами при выводе)
+double FindMax(double[] arr)
 {
-    double sum = 0, max = arr[0], min = arr[0];
+    double max = arr[0];
     int count = arr.Length;
     for (int i = 0; i < count; i++)
     {
         if (arr[i] > max) max = arr[i];
+    }
+    return max;
+}
+
+double FindMin(double[] arr)
+{
+    double min = arr[0];
+    int count = arr.Length;
+    for (int i = 0; i < count; i++)
+    {
         if (arr[i] < min) min = arr[i];
     }
-    sum = max - min;
-    return sum;
+    return min;
 }
+
+Console.Clear();
+
+int quantity = 5; //Prompt("Введите число элементов массива (натуральное): ", 2);
+int min = 0;
+int max = 99;
+double[] array = CreateArray(quantity, min, max);
+
+Console.Write("Массив -> ");
+Console.Write("[");
+PrintArray(array);
+Console.WriteLine("]");
+
+double result = FindMax(array) - FindMin(array);
+Console.Write($"Разница между максимальным и минимальным элементами массива -> {result}");

@@ -49,11 +49,13 @@ double[] CreateArray(int size, int min, int max)
 void PrintArray(double[] arr)
 {
     int count = arr.Length;
+    Console.Write("[");
     for (int i = 0; i < count; i++)
     {
         if (i < arr.Length - 1) Console.Write($"{arr[i]}; ");
         else Console.Write($"{arr[i]}");
     }
+    Console.WriteLine("]");
 }
 
 double FindMax(double[] arr)
@@ -86,9 +88,7 @@ int max = 99;
 double[] array = CreateArray(quantity, min, max);
 
 Console.Write("Массив -> ");
-Console.Write("[");
 PrintArray(array);
-Console.WriteLine("]");
 
 double result = FindMax(array) - FindMin(array);
 Console.Write($"Разница между максимальным и минимальным элементами массива -> {result}");

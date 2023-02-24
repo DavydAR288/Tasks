@@ -18,7 +18,7 @@ Console.Write($"Разница между максимальным и миним
 
 int Prompt(string message, int checkNum) // checkNum: -1 отрицательные; 0 любые; 1 положительные; 2 натуральные;
 {
-    int k = 0; 
+    int k = 0;
     while (k == 0)
     {
         Console.Write(message);
@@ -55,6 +55,8 @@ double[] CreateArray(double[] arr, int min, int max)
     Random rnd = new Random(); //создает псевдослучайное число по системному времени 15мс
     for (int i = 0; i < count; i++)
     {
+        //2 Console.Write($"Введите {i+1}-й элмент массива -> "); // ручной ввод элементов массива
+        //2 arr[i] = Convert.ToDouble(Console.ReadLine());
         arr[i]=rnd.Next(min,max+1);
     }
     return arr;
@@ -65,20 +67,20 @@ void PrintArray(double[] arr)
     int count = arr.Length;
     for (int i = 0; i < count; i++)
     {
-        if (i<arr.Length-1) Console.Write($"{arr[i]}, ");
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
         else Console.Write($"{arr[i]}");
     }
 }
 
 double CheckArray(double[] arr) // суммирование элементов с четными индексами (нечетными местами при выводе)
 {
-    double sum=0, max=arr[0], min=arr[0];
+    double sum = 0, max = arr[0], min = arr[0];
     int count = arr.Length;
     for (int i = 0; i < count; i++)
     {
-        if (arr[i]>max) max=arr[i];
-        if (arr[i]<min) min=arr[i];
+        if (arr[i] > max) max = arr[i];
+        if (arr[i] < min) min = arr[i];
     }
-    sum=max-min;
+    sum = max - min;
     return sum;
 }

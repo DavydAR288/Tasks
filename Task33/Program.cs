@@ -85,9 +85,9 @@ Console.Write("Массив -> ");
 PrintArray(array);
 
 int number = Prompt("Введите искомое число (любое): ", 0);
+bool result=FindNum(array, number);
+Console.WriteLine(result ? "Искомое число найдено" : "Искомое число не найдено");
 
-if (FindNum(array, number) == true) Console.WriteLine($"Искомое число найдено");
-else Console.WriteLine($"Искомое число не найдено");
 
 
 

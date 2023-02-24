@@ -75,9 +75,9 @@ bool FindNum(double[] arr, int number)
 
 Console.Clear();
 
-int quantity = 10; //Prompt("Введите число элементов массива (натуральное): ", 2);
-int min = -999; //Prompt("Укажите минимальный элемент массива (любое): ", 0);
-int max = 999; //Prompt("Укажите максимальный элемент массива (любое): ", 0);
+int quantity = 10; 
+int min = -999; 
+int max = 999; 
 double[] array = new double[quantity];
 array = CreateArray(array, min, max);
 

@@ -92,3 +92,18 @@ PrintArray(array);
 
 double result = FindMax(array) - FindMin(array);
 Console.Write($"Разница между максимальным и минимальным элементами массива -> {result}");
+
+
+
+
+
+
+// int minN = -999;
+// int maxN = 99;
+// double x=0;                     //0-0.999  0.1             1098                        109.8    -999        -899.2  
+// Random rnd = new Random();      //0-0.999  0.9             1098                        988.2    -999        -10.8  
+// for (int i = 0; i < 5; i++) {x=rnd.NextDouble() * (maxN - minN); Console.WriteLine($"{x} + {minN} = {x+minN}"); };
+
+// Console.WriteLine($"maxN - minN = {maxN - minN}");
+// Console.WriteLine($"(maxN - minN) + minN) = {(maxN - minN) + minN}");
+// Console.WriteLine($"(maxN - minN) - minN) = {(maxN - minN) - minN}");

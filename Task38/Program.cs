@@ -41,7 +41,7 @@ double[] CreateArray(int size, int min, int max)
     Random rnd = new Random(); //создает псевдослучайное число по системному времени 15мс
     for (int i = 0; i < size; i++)
     {
-        array[i] = Math.Round(rnd.NextDouble() * (max - min) - min, 1, MidpointRounding.ToZero);
+        array[i] = Math.Round(rnd.NextDouble() * (max - min) + min, 1, MidpointRounding.ToZero);
     }
     return array;
 }

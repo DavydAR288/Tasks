@@ -34,7 +34,15 @@ double numB1 = Promt("b1 = ");
 double numK1 = Promt("k1 = ");
 double numB2 = Promt("b2 = ");
 double numK2 = Promt("k2 = ");
-double[] arrayResult = FindXY(numB1, numK1, numB2, numK2);
-PrintXY(arrayResult);
+if (numB1==numB2 && numK1==numK2) Console.Write($"Обе прямые совпадают");
+else
+{
+    if (numB1==numB2) Console.Write($"Прямые параллельны");
+    else
+    {
+        double[] arrayResult = FindXY(numB1, numK1, numB2, numK2);
+        PrintXY(arrayResult);
+    }
+}
 
 

@@ -16,7 +16,7 @@ int[] CreateArray (int size)
     int[] arr = new int[size];
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"Введите число №{i}: ");
+        Console.Write($"Введите число №{i+1}: ");
         arr[i] = Convert.ToInt32(Console.ReadLine());
     }
     return arr;

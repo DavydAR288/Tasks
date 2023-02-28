@@ -3,38 +3,38 @@
 // соответствующие отрицательные, и наоборот.
 // [-4, -8, 8, 2] -> [4, 8, -8, -2]
 
-int Prompt(string message, int checkNum) // checkNum: -1 отрицательные; 0 любые; 1 положительные; 2 натуральные;
-{
-    int k = 0;
-    while (k == 0)
-    {
-        Console.Write(message);
-        int cc = Convert.ToInt32(Console.ReadLine());
+// int Prompt(string message, int checkNum) // checkNum: -1 отрицательные; 0 любые; 1 положительные; 2 натуральные;
+// {
+//     int k = 0;
+//     while (k == 0)
+//     {
+//         Console.Write(message);
+//         int cc = Convert.ToInt32(Console.ReadLine());
 
-        if (checkNum == 0) // любые
-        {
-            return cc;
-        }
+//         if (checkNum == 0) // любые
+//         {
+//             return cc;
+//         }
 
-        if (cc >= 0 && checkNum == 1) // положительные
-        {
-            return cc;
-        }
+//         if (cc >= 0 && checkNum == 1) // положительные
+//         {
+//             return cc;
+//         }
 
-        if (cc > 0 && checkNum == 2) // натуральные
-        {
-            return cc;
-        }
+//         if (cc > 0 && checkNum == 2) // натуральные
+//         {
+//             return cc;
+//         }
 
-        if (cc <= 0 && checkNum == -1) // отрицательные
-        {
-            return cc;
-        }
+//         if (cc <= 0 && checkNum == -1) // отрицательные
+//         {
+//             return cc;
+//         }
 
-        Console.WriteLine("Число не соответствует заданному диапазону. Повторите ввод.");
-    }
-    return 0;
-}
+//         Console.WriteLine("Число не соответствует заданному диапазону. Повторите ввод.");
+//     }
+//     return 0;
+// }
 
 double[] CreateArray(double[] arr, int min, int max)
 {

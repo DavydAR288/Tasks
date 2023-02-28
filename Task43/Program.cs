@@ -6,7 +6,7 @@ double Promt(string message)
 {
     Console.Write(message);
     string value = (Console.ReadLine());
-    double result = Convert.ToInt32(value);
+    double result = Convert.ToDouble(value);
     // Console.WriteLine();
     return result;
 }

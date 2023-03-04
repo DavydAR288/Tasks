@@ -39,11 +39,12 @@ int Promt(string message)
     return result;
 }
 
-int FindElementPosition(int[,] matrix, int[] position)
+bool FindElementPosition(int[,] matrix, int[] position)
 {
     int row = position[0];
     int column = position[1];
-    return matrix[row, column];
+    if (row >= matrix.GetLength(0) || column >= matrix.GetLength(1) || row < 0 || column < 0) return false;
+    else return true;
 }
 
 Console.Clear();
@@ -58,11 +59,12 @@ PrintArray(array2D);
 
 int findElementRow = Promt("Введите позицию по строке: ");
 int findElementColumn = Promt("Введите позицию по столбцу: ");
-int[] positionArray = { findElementRow, findElementColumn };
+int[] positionArray = { findElementRow, findElementColumn};
 
-if (findElementRow < array2D.GetLength(0) && findElementColumn < array2D.GetLength(1))
+bool resultFindElement = FindElementPosition(array2D, positionArray);
+if (resultFindElement)
 {
-    int resultFindElement = FindElementPosition(array2D, positionArray);
-    Console.Write($"Элемент матрицы на искомой позиции = {resultFindElement}");
+    int result = array2D[positionArray[0], positionArray[1]];
+    Console.Write($"Элемент матрицы на искомой позиции = {result}");
 }
 else Console.Write($"Такого элемента в массиве нет (введены позиции элемента за пределами размера матрицы)");

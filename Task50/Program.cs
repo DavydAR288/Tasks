@@ -73,7 +73,6 @@ else Console.Write($"Такого элемента в массиве нет (в�
 // 6.0.405 [C:\Program Files\dotnet\sdk]
 // 7.0.200 [C:\Program Files\dotnet\sdk]
 
-
 // dotnet sdk check
 // Пакеты SDK для .NET:
 // Версия       Состояние

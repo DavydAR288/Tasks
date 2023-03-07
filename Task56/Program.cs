@@ -43,18 +43,32 @@ int Promt(string message)
 
 int[] FindRowSum(int[,] matrix)
 {
-    int sum = 0, row = 0, minSum=0;
-    int[] sumMatrix = new int[matrix.GetLength(1)];
+    int sum = 0;
+    int[] sumMatrix = new int[matrix.GetLength(0)];
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             sum += matrix[i, j];
         }
-        sumMatrix[i]=sum;
-        sum=0;
+        sumMatrix[i] = sum;
+        sum = 0;
     }
     return sumMatrix;
+}
+
+int[] CompareSum(int[] matrix)
+{
+    int minIndex = 0, minSum = matrix[minIndex];
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        if (matrix[i] < minSum)
+        {
+            minSum = matrix[i];
+            minIndex = i;
+        }
+    }
+    return new int[] { minIndex, minSum };
 }
 
 
@@ -64,11 +78,12 @@ Console.Clear();
 int matrixRows = 3; //Promt("Введите количество строк: ");
 int matrixColumns = 6; //Promt("Введите количество столбцов: ");
 int maxRnd = 10; //Promt("Введите верхний предел случйного числа: ");
-int minRnd = 1; //Promt("Введите нижний предел случйного числа: ");
+int minRnd = -10; //Promt("Введите нижний предел случйного числа: ");
 
 int[,] array2D = CreateMatrixRndInt(matrixRows, matrixColumns, minRnd, maxRnd);
 PrintArray(array2D);
 Console.WriteLine();
-int[] result = FindRowSum(array2D);
-Console.WriteLine(result);
-
+int[] arraySum = FindRowSum(array2D);
+Console.WriteLine(arraySum[0]);Console.WriteLine(arraySum[1]);Console.WriteLine(arraySum[2]);
+int[] result = CompareSum(arraySum);
+Console.WriteLine($"Строка с индексом {result[0]}, имеет минимальную сумму {result[1]}");

@@ -10,10 +10,7 @@ int[,] CreateMatrixRndInt(int rows, int columns)
     int[,] matrix = new int[rows, columns];
     int startElement = 1, // стартовый элемент
         count = 0, // счетчик для увеличения вычитания длинны
-        quantitySteps = 0,
-        subtraction = 2, // шаг вычитания
-        direction = 0; // 0 - вправо, 1 - вниз, 2 - влево, 3 - вверх
-
+        quantitySteps = 0;
     for (quantitySteps = 0; quantitySteps <= rows * columns; quantitySteps++)
     {
         for (int j = 0 + count; j < columns - 1 - count; j++) // заполнение вправо
@@ -21,33 +18,23 @@ int[,] CreateMatrixRndInt(int rows, int columns)
             matrix[0 + count, j] = startElement++;
             quantitySteps++;
         }
-
-        for (int i = 0; i < rows - 1 - count * 2; i++) // заполнение вниз // - count * subtraction нужно ли добавлять вычитание, и с каким коэффом
+        for (int i = 0; i < rows - 1 - count * 2; i++) // заполнение вниз 
         {
             matrix[i + count, columns - 1 - count] = startElement++;
             quantitySteps++;
         }
-
         for (int j = columns - 1 - count; j > 0 + count; j--) // заполнение влево
         {
             matrix[rows - 1 - count, j] = startElement++;
             quantitySteps++;
         }
-
         for (int i = rows - 1 - count; i > 0 + count; i--) // заполнение вверх
         {
             matrix[i, 0 + count] = startElement++;
             quantitySteps++;
         }
-
         count++;
     }
-
-    Console.WriteLine($"count={count}");
-    Console.WriteLine($"quantitySteps={quantitySteps}");
-    Console.WriteLine($"rows * columns={rows * columns}");
-    Console.WriteLine($"startElement={startElement}");
-
     return matrix;
 }
 
@@ -74,8 +61,8 @@ void PrintArray(int[,] matrix)
 
 Console.Clear();
 
-int matrixRows = 8; //Promt("Введите количество строк: ");
-int matrixColumns = 8; //Promt("Введите количество столбцов: ");
+int matrixRows = 4; //Promt("Введите количество строк: ");
+int matrixColumns = 4; //Promt("Введите количество столбцов: ");
 
 int[,] matrix2d = CreateMatrixRndInt(matrixRows, matrixColumns);
 PrintArray(matrix2d);

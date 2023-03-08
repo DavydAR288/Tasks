@@ -77,4 +77,3 @@ PrintArray(array2D);
 Console.WriteLine();
 SortMatrix(array2D);
 PrintArray(array2D);
-Console.WriteLine(array2D[1,2]);

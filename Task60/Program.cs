@@ -30,7 +30,7 @@ int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
     }
     Array.Sort(dictionary);                                 // Используется для отображения словаря, оценки его корректности
     Console.Write("Словарь используемых элементов: ");      // 
-    for (int n = 0; n < sizeDictionary; n++)                // 
+    for (int n = 0; n < sizeDictionary; n++)                // НЕ ЯВЛЯЕТСЯ ОБЯЗАТЕЛЬНОЙ ЧАСТЬЮ ВЫПОЛНЕНИЯ ПРОГРАММЫ И ЕЁ ЗАДАЧИ ДЛЯ ДЗ
     {                                                       // 
         Console.Write($"{dictionary[n]} ");                 // 
     }                                                       // 

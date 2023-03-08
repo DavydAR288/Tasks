@@ -84,6 +84,6 @@ int[,] array2D = CreateMatrixRndInt(matrixRows, matrixColumns, minRnd, maxRnd);
 PrintArray(array2D);
 Console.WriteLine();
 int[] arraySum = FindRowSum(array2D);
-Console.WriteLine(arraySum[0]);Console.WriteLine(arraySum[1]);Console.WriteLine(arraySum[2]);
+// Console.WriteLine(arraySum[0]);Console.WriteLine(arraySum[1]);Console.WriteLine(arraySum[2]); // вывод суммы строк для проверки корректности алгоритма
 int[] result = CompareSum(arraySum);
 Console.WriteLine($"Строка с индексом {result[0]}, имеет минимальную сумму {result[1]}");

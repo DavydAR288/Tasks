@@ -9,8 +9,8 @@ int[,] CreateMatrixRndInt(int rows, int columns)
 {
     int[,] matrix = new int[rows, columns];
     int startElement = 1, // стартовый элемент
-        count = 0, // счетчик для увеличения вычитания длинны
-        quantitySteps = 0;
+        count = 0, // счетчик прохода 4-х напрвлений "колец"
+        quantitySteps = 0; // счетчик проверки количества элементов массива для запуска циклов направлений
     for (quantitySteps = 0; quantitySteps <= rows * columns; quantitySteps++)
     {
         for (int j = 0 + count; j < columns - 1 - count; j++) // заполнение вправо

@@ -9,13 +9,13 @@
 int Akkerman(int m, int n)
 {
     if (m == 0) return n + 1;
-    else if (m > 0 && n == 0) return Akkerman(m - 1, 1);
-    else return Akkerman(m - 1, Akkerman(m, n - 1));
+    if (m > 0 && n == 0) return Akkerman(m - 1, 1);
+    return Akkerman(m - 1, Akkerman(m, n - 1));
 }
 
 Console.Write("Введите число m>0: ");
 int number1 = int.Parse(Console.ReadLine());
 Console.Write("Введите число n>0: ");
 int number2 = int.Parse(Console.ReadLine());
-if (number1>=0 && number2>=0) Console.WriteLine($"Значение функции Аккермана для введенных чисел равно: {Akkerman(number1, number2)}");
+if (number1 >= 0 && number2 >= 0) Console.WriteLine($"Значение функции Аккермана для введенных чисел равно: {Akkerman(number1, number2)}");
 else Console.WriteLine("Ошибка ввода");

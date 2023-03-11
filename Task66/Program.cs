@@ -2,16 +2,24 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-int SumRec(int num1, int num2)
+
+int NaturalNumbers(int num1, int num2)  
 {
-    if (num2 == num1) return 0;
-    else return num2 + SumRec(num2 - 1, num1);
+    if (num1<num2)
+    {
+        if(num2==num1) return num1;
+        return num2 + NaturalNumbers(num1,num2-1);
+    }
+    else
+    {
+        if(num1==num2) return num2;
+        return num1 + NaturalNumbers(num2,num1-1);
+    }
 }
 
+Console.Write("Введите натуральное число 1: ");
+int number1 = int.Parse(Console.ReadLine());
+Console.Write("Введите натуральное число 2: ");
+int number2 = int.Parse(Console.ReadLine());
 
-Console.Write("Введите число 1: ");
-int numberOne = int.Parse(Console.ReadLine());
-Console.Write("Введите число 2: ");
-int numberTwo = int.Parse(Console.ReadLine());
-
-Console.WriteLine(SumRec(numberOne, numberTwo));
+Console.WriteLine(NaturalNumbers(number1, number2));

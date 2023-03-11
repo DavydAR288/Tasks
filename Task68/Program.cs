@@ -6,20 +6,16 @@
 //          = A(m - 1, 1), если m > 0, n = 0,
 //          = A(m - 1, A(m, n - 1)), если m > 0, n > 0.
 
-public class Solution {
-    public static int recursion(int m, int n) {
-        // Базовый случай
-        if (m == 0) {
-            return n + 1;
-        } // Шаг рекурсии / рекурсивное условие
-        else if (n == 0 && m > 0) {
-            return recursion(m - 1, 1);
-        } // Шаг рекурсии / рекурсивное условие
-        else {
-            return recursion(m - 1, recursion(m, n - 1));
-        }
-    }
-    public static void main(String[] args) {
-        System.out.println(recursion(3, 2)); // вызов рекурсивной функции
-    }
+int Akkerman(int m, int n)
+{
+    if (m == 0) return n + 1;
+    else if (m > 0 && n == 0) return Akkerman(m - 1, 1);
+    else return Akkerman(m - 1, Akkerman(m, n - 1));
 }
+
+Console.Write("Введите число m: ");
+int number1 = int.Parse(Console.ReadLine());
+Console.Write("Введите число n: ");
+int number2 = int.Parse(Console.ReadLine());
+
+Console.WriteLine($"Значение функции Аккермана для введенных чисел равно: {Akkerman(number1, number2)}");
